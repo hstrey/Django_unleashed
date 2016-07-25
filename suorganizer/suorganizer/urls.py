@@ -16,18 +16,9 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-<<<<<<< Updated upstream
-from organizer.views import homepage, tag_detail
-
-urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^tag/(?P<slug>[\w\-]+)/$', tag_detail, name='organizer_tag_detail'),
-    url(r'^$', homepage),
-=======
 from organizer import urls as organizer_urls
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include(organizer_urls)),
->>>>>>> Stashed changes
 ]
